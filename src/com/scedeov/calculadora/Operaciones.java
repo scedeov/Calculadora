@@ -47,7 +47,7 @@ class Operaciones {
         return simplificar(resultado);
     }
 
-    Fraccion simplificar (Fraccion resultado) { //no funciona con numeros negativos
+    private Fraccion simplificar(Fraccion resultado) {
         for (int i = 2; i < 10; i++) {
             if (resultado.getDenominador() % i == 0 && resultado.getNumerador() % i == 0) {
                 resultado.setDenominador(resultado.getDenominador() / i);
@@ -56,6 +56,13 @@ class Operaciones {
             }
         }
        return resultado;
+    }
+
+    Fraccion multiplicar(){
+        Fraccion resultado = new Fraccion();
+        resultado.setNumerador(primeraFraccion.getNumerador()*segundaFraccion.getNumerador());
+        resultado.setDenominador(primeraFraccion.getDenominador()*segundaFraccion.getDenominador());
+        return simplificar(resultado);
     }
 
     private Fraccion primeraFraccion;

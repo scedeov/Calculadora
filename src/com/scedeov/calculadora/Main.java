@@ -16,7 +16,8 @@ public class Main {
 	System.out.println(operacion.sumar().toString());
 	System.out.println("Restando fracciones...");
 	System.out.println(operacion.restar().toString());
-
+	System.out.println("Multiplicando fracciones...");
+	System.out.println(operacion.multiplicar().toString());
 
     }
 }
