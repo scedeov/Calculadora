@@ -7,20 +7,15 @@ class Operaciones {
         this.primeraFraccion = primeraFraccion;
     }
 
-    public Fraccion getPrimeraFraccion() {
-        return primeraFraccion;
-    }
-
-    public void setPrimeraFraccion(Fraccion fraccion) {
-        this.primeraFraccion = fraccion;
-    }
-
-    public void setSegundaFraccion(Fraccion segundaFraccion) {
-        this.segundaFraccion = segundaFraccion;
-    }
-
-    public Fraccion getSegundaFraccion() {
-        return segundaFraccion;
+    private Fraccion simplificar(Fraccion resultado) {
+        for (int i = 2; i < 10; i++) {
+            if (resultado.getDenominador() % i == 0 && resultado.getNumerador() % i == 0) {
+                resultado.setDenominador(resultado.getDenominador() / i);
+                resultado.setNumerador(resultado.getNumerador() / i);
+                i = 1;
+            }
+        }
+        return resultado;
     }
 
     Fraccion sumar () {
@@ -47,18 +42,7 @@ class Operaciones {
         return simplificar(resultado);
     }
 
-    private Fraccion simplificar(Fraccion resultado) {
-        for (int i = 2; i < 10; i++) {
-            if (resultado.getDenominador() % i == 0 && resultado.getNumerador() % i == 0) {
-                resultado.setDenominador(resultado.getDenominador() / i);
-                resultado.setNumerador(resultado.getNumerador() / i);
-                i = 1;
-            }
-        }
-       return resultado;
-    }
-
-    Fraccion multiplicar(){
+    Fraccion multiplicar() {
         Fraccion resultado = new Fraccion();
         resultado.setNumerador(primeraFraccion.getNumerador()*segundaFraccion.getNumerador());
         resultado.setDenominador(primeraFraccion.getDenominador()*segundaFraccion.getDenominador());
