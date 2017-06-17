@@ -49,6 +49,13 @@ class Operaciones {
         return simplificar(resultado);
     }
 
+    Fraccion dividir() {
+        Fraccion resultado = new Fraccion();
+        resultado.setNumerador(primeraFraccion.getNumerador()*segundaFraccion.getDenominador());
+        resultado.setDenominador(primeraFraccion.getDenominador()*segundaFraccion.getNumerador());
+        return simplificar(resultado);
+    }
+
     private Fraccion primeraFraccion;
     private Fraccion segundaFraccion;
 }

@@ -18,6 +18,8 @@ public class Main {
 	System.out.println(operacion.restar().toString());
 	System.out.println("Multiplicando fracciones...");
 	System.out.println(operacion.multiplicar().toString());
+	System.out.println("Dividiendo fracciones...");
+	System.out.println(operacion.dividir().toString());
 
     }
 }
