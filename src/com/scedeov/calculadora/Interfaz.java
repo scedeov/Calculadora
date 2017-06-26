@@ -17,27 +17,31 @@ class Interfaz {
         return opcion;
     }
 
-    void vSumar() {
-        System.out.println("\nSumando...");
-        Fraccion primeraFraccion = new Fraccion();
-        System.out.println("Primera Fraccion...");
-        System.out.print("Digite el numerador de la primera fraccion -> ");
+    private Fraccion getDatosFraccion(String mensaje) {
+        Fraccion fraccion = new Fraccion();
         Scanner S = new Scanner(System.in);
-        primeraFraccion.setNumerador(S.nextInt());
+        System.out.println(mensaje);
+        System.out.print("Digite el numerador de la primera fraccion -> ");
+        fraccion.setNumerador(S.nextInt());
         System.out.print("\nDigite el denominador de la primera fraccion -> ");
-        primeraFraccion.setDenominador(S.nextInt());
-        Fraccion segundaFraccion = new Fraccion();
-        System.out.println("\nSegunda Fraccion...");
-        System.out.print("Digite el numerador de la segunda fracccion -> ");
-        segundaFraccion.setNumerador(S.nextInt());
-        System.out.print("\nDigite el denominador de la segunda fraccion -> ");
-        segundaFraccion.setDenominador(S.nextInt());
-        System.out.println("\nCalculando...");
+        fraccion.setDenominador(S.nextInt());
+        return fraccion;
+    }
+
+    private void pausa() {
         try {
-            TimeUnit.SECONDS.sleep(2);
+            TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    void vSumar() {
+        System.out.println("\nSumando...");
+        Fraccion primeraFraccion = getDatosFraccion("Primera fraccion...");
+        Fraccion segundaFraccion = getDatosFraccion("Segunda fraccion...");
+        System.out.println("\nCalculando...");
+        pausa();
         Operaciones operacion = new Operaciones();
         Fraccion fraccion_resultado = operacion.sumar(primeraFraccion, segundaFraccion);
         System.out.println(fraccion_resultado.toString());
@@ -45,25 +49,10 @@ class Interfaz {
 
     void vRestar() {
         System.out.println("\nRestando...");
-        Fraccion primeraFraccion = new Fraccion();
-        System.out.println("Primera Fraccion...");
-        System.out.print("Digite el numerador de la primera fraccion -> ");
-        Scanner S = new Scanner(System.in);
-        primeraFraccion.setNumerador(S.nextInt());
-        System.out.print("\nDigite el denominador de la primera fraccion -> ");
-        primeraFraccion.setDenominador(S.nextInt());
-        Fraccion segundaFraccion = new Fraccion();
-        System.out.println("\nSegunda Fraccion...");
-        System.out.print("Digite el numerador de la segunda fracccion -> ");
-        segundaFraccion.setNumerador(S.nextInt());
-        System.out.print("\nDigite el denominador de la segunda fraccion -> ");
-        segundaFraccion.setDenominador(S.nextInt());
+        Fraccion primeraFraccion = getDatosFraccion("Primera fraccion...");
+        Fraccion segundaFraccion = getDatosFraccion("Segunda fraccion...");
         System.out.println("\nCalculando...");
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        pausa();
         Operaciones operacion = new Operaciones();
         Fraccion fraccion_resultado = operacion.restar(primeraFraccion, segundaFraccion);
         System.out.println(fraccion_resultado.toString());
@@ -71,25 +60,10 @@ class Interfaz {
 
     void vDividir() {
         System.out.println("\nDividiendo...");
-        Fraccion primeraFraccion = new Fraccion();
-        System.out.println("Primera Fraccion...");
-        System.out.print("Digite el numerador de la primera fraccion -> ");
-        Scanner S = new Scanner(System.in);
-        primeraFraccion.setNumerador(S.nextInt());
-        System.out.print("\nDigite el denominador de la primera fraccion -> ");
-        primeraFraccion.setDenominador(S.nextInt());
-        Fraccion segundaFraccion = new Fraccion();
-        System.out.println("\nSegunda Fraccion...");
-        System.out.print("Digite el numerador de la segunda fracccion -> ");
-        segundaFraccion.setNumerador(S.nextInt());
-        System.out.print("\nDigite el denominador de la segunda fraccion -> ");
-        segundaFraccion.setDenominador(S.nextInt());
+        Fraccion primeraFraccion = getDatosFraccion("Primera fraccion...");
+        Fraccion segundaFraccion = getDatosFraccion("Segunda fraccion...");
         System.out.println("\nCalculando...");
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        pausa();
         Operaciones operacion = new Operaciones();
         Fraccion fraccion_resultado = operacion.dividir(primeraFraccion, segundaFraccion);
         System.out.println(fraccion_resultado.toString());
@@ -97,25 +71,10 @@ class Interfaz {
 
     void vMultiplicar() {
         System.out.println("\nMultiplicando...");
-        Fraccion primeraFraccion = new Fraccion();
-        System.out.println("Primera Fraccion...");
-        System.out.print("Digite el numerador de la primera fraccion -> ");
-        Scanner S = new Scanner(System.in);
-        primeraFraccion.setNumerador(S.nextInt());
-        System.out.print("\nDigite el denominador de la primera fraccion -> ");
-        primeraFraccion.setDenominador(S.nextInt());
-        Fraccion segundaFraccion = new Fraccion();
-        System.out.println("\nSegunda Fraccion...");
-        System.out.print("Digite el numerador de la segunda fracccion -> ");
-        segundaFraccion.setNumerador(S.nextInt());
-        System.out.print("\nDigite el denominador de la segunda fraccion -> ");
-        segundaFraccion.setDenominador(S.nextInt());
+        Fraccion primeraFraccion = getDatosFraccion("Primera fraccion...");
+        Fraccion segundaFraccion = getDatosFraccion("Segunda fraccion...");
         System.out.println("\nCalculando...");
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        pausa();
         Operaciones operacion = new Operaciones();
         Fraccion fraccion_resultado = operacion.multiplicar(primeraFraccion, segundaFraccion);
         System.out.println(fraccion_resultado.toString());
