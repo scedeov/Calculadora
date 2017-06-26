@@ -24,7 +24,13 @@ class Interfaz {
         System.out.print("Digite el numerador de la primera fraccion -> ");
         fraccion.setNumerador(S.nextInt());
         System.out.print("\nDigite el denominador de la primera fraccion -> ");
-        fraccion.setDenominador(S.nextInt());
+        int denominador = S.nextInt();
+        while (denominador == 0) {
+            System.out.println("No se puede dividir entre 0...");
+            System.out.print("\nDigite el denominador de la primera fraccion -> ");
+            denominador = S.nextInt();
+        }
+        fraccion.setDenominador(denominador);
         return fraccion;
     }
 
