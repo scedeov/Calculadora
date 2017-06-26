@@ -2,6 +2,11 @@ package com.scedeov.calculadora;
 
 class Operaciones {
 
+    Operaciones() {
+        primeraFraccion = new Fraccion();
+        segundaFraccion = new Fraccion();
+    }
+
     Operaciones(Fraccion primeraFraccion, Fraccion segundaFraccion) {
         this.segundaFraccion = segundaFraccion;
         this.primeraFraccion = primeraFraccion;
@@ -18,14 +23,14 @@ class Operaciones {
         return resultado;
     }
 
-    Fraccion sumar () {
+    Fraccion sumar() {
         Fraccion resultado = new Fraccion();
         resultado.setNumerador(
-                primeraFraccion.getNumerador()*segundaFraccion.getDenominador() +
-                        segundaFraccion.getNumerador()*primeraFraccion.getDenominador()
+                primeraFraccion.getNumerador() * segundaFraccion.getDenominador() +
+                        segundaFraccion.getNumerador() * primeraFraccion.getDenominador()
         );
         resultado.setDenominador(
-                primeraFraccion.getDenominador()*segundaFraccion.getDenominador()
+                primeraFraccion.getDenominador() * segundaFraccion.getDenominador()
         );
         return simplificar(resultado);
     }
@@ -33,26 +38,26 @@ class Operaciones {
     Fraccion restar() {
         Fraccion resultado = new Fraccion();
         resultado.setNumerador(
-                primeraFraccion.getNumerador()*segundaFraccion.getDenominador() -
-                        segundaFraccion.getNumerador()*primeraFraccion.getDenominador()
+                primeraFraccion.getNumerador() * segundaFraccion.getDenominador() -
+                        segundaFraccion.getNumerador() * primeraFraccion.getDenominador()
         );
         resultado.setDenominador(
-                primeraFraccion.getDenominador()*segundaFraccion.getDenominador()
+                primeraFraccion.getDenominador() * segundaFraccion.getDenominador()
         );
         return simplificar(resultado);
     }
 
     Fraccion multiplicar() {
         Fraccion resultado = new Fraccion();
-        resultado.setNumerador(primeraFraccion.getNumerador()*segundaFraccion.getNumerador());
-        resultado.setDenominador(primeraFraccion.getDenominador()*segundaFraccion.getDenominador());
+        resultado.setNumerador(primeraFraccion.getNumerador() * segundaFraccion.getNumerador());
+        resultado.setDenominador(primeraFraccion.getDenominador() * segundaFraccion.getDenominador());
         return simplificar(resultado);
     }
 
     Fraccion dividir() {
         Fraccion resultado = new Fraccion();
-        resultado.setNumerador(primeraFraccion.getNumerador()*segundaFraccion.getDenominador());
-        resultado.setDenominador(primeraFraccion.getDenominador()*segundaFraccion.getNumerador());
+        resultado.setNumerador(primeraFraccion.getNumerador() * segundaFraccion.getDenominador());
+        resultado.setDenominador(primeraFraccion.getDenominador() * segundaFraccion.getNumerador());
         return simplificar(resultado);
     }
 

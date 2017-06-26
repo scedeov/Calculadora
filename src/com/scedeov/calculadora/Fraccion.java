@@ -2,7 +2,7 @@ package com.scedeov.calculadora;
 
 public class Fraccion {
 
-     Fraccion(){
+    Fraccion() {
         numerador = 0;
         denominador = 1;
     }
@@ -25,7 +25,7 @@ public class Fraccion {
 
     @Override
     public String toString() {
-        return "La fraccion es: "+ numerador + "/" + denominador;
+        return "La fraccion es: " + numerador + "/" + denominador;
     }
 
     private int numerador;
