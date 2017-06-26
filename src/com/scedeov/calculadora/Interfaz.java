@@ -38,8 +38,9 @@ class Interfaz {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Operaciones resultado = new Operaciones(primeraFraccion, segundaFraccion);
-        System.out.println(resultado.sumar().toString());
+        Operaciones operacion = new Operaciones();
+        Fraccion fraccion_resultado = operacion.sumar(primeraFraccion, segundaFraccion);
+        System.out.println(fraccion_resultado.toString());
     }
 
     void vRestar() {
@@ -63,8 +64,9 @@ class Interfaz {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Operaciones resultado = new Operaciones(primeraFraccion, segundaFraccion);
-        System.out.println(resultado.restar().toString());
+        Operaciones operacion = new Operaciones();
+        Fraccion fraccion_resultado = operacion.restar(primeraFraccion, segundaFraccion);
+        System.out.println(fraccion_resultado.toString());
     }
 
     void vDividir() {
@@ -88,8 +90,9 @@ class Interfaz {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Operaciones resultado = new Operaciones(primeraFraccion, segundaFraccion);
-        System.out.println(resultado.dividir().toString());
+        Operaciones operacion = new Operaciones();
+        Fraccion fraccion_resultado = operacion.dividir(primeraFraccion, segundaFraccion);
+        System.out.println(fraccion_resultado.toString());
     }
 
     void vMultiplicar() {
@@ -113,7 +116,8 @@ class Interfaz {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Operaciones resultado = new Operaciones(primeraFraccion, segundaFraccion);
-        System.out.println(resultado.multiplicar().toString());
+        Operaciones operacion = new Operaciones();
+        Fraccion fraccion_resultado = operacion.multiplicar(primeraFraccion, segundaFraccion);
+        System.out.println(fraccion_resultado.toString());
     }
 }
